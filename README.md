@@ -1,27 +1,13 @@
 # ember-moment-transform
 
-This README outlines the details of collaborating on this Ember addon.
+A Ember transform with momentjs.
 
-## Installation
+To use run `ember install ember-moment-transform`, and put your model
 
-* `git clone <repository-url>` this repository
-* `cd ember-moment-transform`
-* `npm install`
-* `bower install`
 
-## Running
+```javascript
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+birthday: DS.attr('moment', {format: 'yyyy-MM-dd'})
 
-## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+```
