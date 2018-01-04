@@ -6,14 +6,14 @@ import moment from 'moment';
 export default DS.Transform.extend({
   deserialize(serialized, options) {
     if (serialized) {
-      return moment(serialized, options.format).toDate();
+      return options.utc ? moment.utc(serialized, options.format).toDate(): moment(serialized, options.format).toDate();
     }
     return serialized;
   },
 
   serialize(deserialized, options) {
     if (deserialized) {
-      return moment(deserialized).format(options.format);
+      return options.utc ? moment.utc(deserialized).format(options.format) : moment(deserialized).format(options.format);
     }
     return deserialized;
   }
